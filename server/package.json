@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/zetadevelopment/PMZ_Software#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "glob": "^7.1.4",
+    "mysql": "^2.17.1",
+    "openrecord": "^2.10.0"
   }
 }
