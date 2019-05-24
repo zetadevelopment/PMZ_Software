@@ -12,7 +12,12 @@ const store = new Store({
   plugins: [require('openrecord/lib/base/dynamic_loading')],
   migrations: `${__dirname}/db/migrate/*`,
   models: `${__dirname}/models/*`,
-  inflection: { 'alerta': 'alertas' } # We need to add words here that are not detected by reflection module.
+  // We need to add words here that are not detected by reflection module.
+  inflection: {
+    'alerta': 'alertas',
+    'rols': 'roles',
+    'sesions': 'sesiones',
+  }
 });
 
 const app = express();
