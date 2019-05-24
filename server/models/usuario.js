@@ -4,7 +4,7 @@ class Usuario extends Store.BaseModel {
   static definition() {
     // validaciones
     this.validatesPresenceOf('nombre', 'email', 'password');
-    this.validatesFormatOf('email');
+    this.validatesFormatOf('email', 'email');
     this.validatesLengthOf('password', 8);
 
     // relaciones
