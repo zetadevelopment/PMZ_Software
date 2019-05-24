@@ -11,7 +11,8 @@ const store = new Store({
   password: '',
   plugins: [require('openrecord/lib/base/dynamic_loading')],
   migrations: `${__dirname}/db/migrate/*`,
-  models: `${__dirname}/models/*`
+  models: `${__dirname}/models/*`,
+  inflection: { 'alerta': 'alertas' } # We need to add words here that are not detected by reflection module.
 });
 
 const app = express();
@@ -19,6 +20,9 @@ const port = process.env.PORT || 3000;
 
 store.ready(async () => {
   console.log('Conexión a base de datos completada');
+}).catch((e) => {
+  console.log('Error intentando preparar la conexión a base de datos');
+  console.error(e);
 });
 
 app.use(express.static(path.join(__dirname, '/..')));
