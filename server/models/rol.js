@@ -1,6 +1,6 @@
 const Store = require('openrecord/store/mysql');
 
-class Sesion extends Store.BaseModel {
+class Rol extends Store.BaseModel {
   static definition() {
     this.validatesPresenceOf('nombre');
 
@@ -8,4 +8,4 @@ class Sesion extends Store.BaseModel {
   }
 }
 
-module.exports = Sesion;
+module.exports = Rol;
