@@ -1,3 +1,5 @@
+let productosAdded = [];
+
 $(() => {
   document.querySelector('#cash').addEventListener('change', function() {
     $('.card-details').hide();
@@ -11,18 +13,35 @@ $(() => {
     $('.card-details').show();
   });
 
+  document.querySelector('#save-info').addEventListener('change', function() {
+    $.post('/cliente', {
+      nombre: document.querySelector('#firstName').value,
+      apellido: document.querySelector('#lastName').value,
+      email: document.querySelector('#email').value
+    }, (res) => {
+      console.log(res);
+    });
+  });
+
+  document.querySelector('#main').addEventListener('submit', () => {
+    productsAdded.forEach((producto) => {
+    });
+  });
+
   let email = document.querySelector('#email');
 
   email.addEventListener('blur', (evt) => {
     $.get(`/cliente/${email.value}`, (res) => {
       console.log(res);
-      document.querySelector('#firstName').value = res.user.nombre;
-      document.querySelector('#lastName').value = res.user.apellido;
-      document.querySelector('#username').value = res.user.email;
+
+      if (res.user) {
+        document.querySelector('#firstName').value = res.user.nombre;
+        document.querySelector('#lastName').value = res.user.apellido;
+        document.querySelector('#username').value = res.user.email;
+      }
     });
   });
 
-  let productosAdded = [];
   let addProducto = (nombre, unidad, precio) => {
     let li = document.createElement('li');
     let div = document.createElement('div');

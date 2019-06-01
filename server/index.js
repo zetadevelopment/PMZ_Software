@@ -76,7 +76,7 @@ store.ready(async () => {
     if (req.body && req.body.nombre && req.body.email) {
       Usuario.create({
         nombre: req.body.nombre,
-        apellido: req.body.nombre.split(' ')[1] || 'no-apellido',
+        apellido: req.body.apellido || req.body.nombre.split(' ')[1] || 'no-apellido',
         email: req.body.email,
         password: 'password',
       }).then((user) => {
