@@ -39,6 +39,39 @@ store.ready(async () => {
     res.sendFile(path.join(__dirname, '/../login.html'));
   });
 
+  app.get('/css/:file', (req, res) => {
+    if (req.params.file.endsWith('css')) {
+      res.sendFile(path.join(__dirname, `/../${req.params.file}`));
+    } else {
+      res.sendStatus(404);
+    }
+  });
+
+  app.get('/js/:file', (req, res) => {
+    if (req.params.file.endsWith('js')) {
+      res.sendFile(path.join(__dirname, `/../${req.params.file}`));
+    } else {
+      res.sendStatus(404);
+    }
+  });
+
+  app.get('/:file', (req, res) => {
+    if (req.params.file === 'favicon.ico') {
+      res.sendStatus(200);
+    } else {
+      res.sendFile(path.join(__dirname, `/../${req.params.file}.html`));
+    }
+  });
+
+  app.get('/cliente/:email', async (req, res) => {
+    if (req.params.email) {
+      let user = await Usuario.where({ email: req.params.email }).first();
+      res.json({ ok: true, user: user && user.toJson() });
+    } else {
+      res.json({ ok: false });
+    }
+  });
+
   app.post('/cliente', async (req, res) => {
     if (req.body && req.body.nombre && req.body.email) {
       Usuario.create({
