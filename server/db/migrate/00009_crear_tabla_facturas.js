@@ -6,5 +6,6 @@ module.exports = function migration00009() {
     this.float('subtotal', { not_null: true });
     this.float('total', { not_null: true });
     this.float('descuento', { not_null: true });
+    this.datetime('created_at', { not_null: true, default: 'NOW()' });
   });
 }
