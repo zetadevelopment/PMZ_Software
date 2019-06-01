@@ -4,10 +4,10 @@ function validateData() {
 
     switch(document.querySelector('#inputEmail').value) {
       case 'cajero@maxisoft.co':
-        window.location = 'recoverpass.html';
+        window.location = '/recoverpass';
         break;
       default:
-        window.location = 'soon.html';
+        window.location = '/soon';
         break;
     };
   });

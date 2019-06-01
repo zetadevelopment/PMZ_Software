@@ -6,9 +6,13 @@
     <title>Maxisoft - Zona de caja</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- Bootstrap core CSS -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/js/cajero.js"></script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -24,7 +28,7 @@
           font-size: 3.5rem;
         }
       }
-	  
+
 	  .container {
 	    max-width: 960px;
 	  }
@@ -114,74 +118,24 @@
         </div>
 
         <div class="mb-3">
-          <label for="username">Documento de identidad</label>
+          <label for="username">Nombre de usuario</label>
+          <div class="input-group">
+            <input type="text" class="form-control" id="username" placeholder="Username" required>
+            <div class="invalid-feedback" style="width: 100%;">
+              Un nombre de usuario es requerido
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="email">Email</label>
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">@</span>
             </div>
-            <input type="text" class="form-control" id="username" placeholder="Username" required>
-            <div class="invalid-feedback" style="width: 100%;">
-              Un n&uacute;mero de identificaci&oacute;n es requerido
-            </div>
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="email">Email <span class="text-muted">(Optional)</span></label>
-          <input type="email" class="form-control" id="email" placeholder="you@example.com">
-          <div class="invalid-feedback">
-            Por favor, ingreese una direcci&oacute;n de correo v&aacute;lido.
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="address">Direcci&oacute;n</label>
-          <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-          <div class="invalid-feedback">
-            Por favor, ingrese su direcci&oacute;n
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-          <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-        </div>
-
-        <div class="row">
-          <div class="col-md-4 mb-3">
-            <label for="country">Pa&iacute;s</label>
-            <select class="custom-select d-block w-100" id="country" required>
-              <option value="">Choose...</option>
-              <option>Colombia</option>
-            </select>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com">
             <div class="invalid-feedback">
-              Por favor, seleccione un pa&iacute;s
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <label for="state">Departamento</label>
-            <select class="custom-select d-block w-100" id="state" required>
-              <option value="">Choose...</option>
-              <option>Antioquia</option>
-			  <option>Cundinamarca</option>
-			  <option>Bogot&aacute;, D.C.</option>
-            </select>
-            <div class="invalid-feedback">
-              Por favor, seleccione un departamento.
-            </div>
-          </div>
-          <div class="col-md-4 mb-4">
-            <label for="zip">Municipio</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required>
-            <div class="invalid-feedback">
-              Municipio requerido
-            </div>
-          </div>
-		  <div class="col-md-3 mb-4">
-            <label for="zip">C&oacute;digo postal</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required>
-            <div class="invalid-feedback">
-              C&oacute;digo postal requerido.
+              Por favor, ingrese una direcci&oacute;n de correo v&aacute;lido.
             </div>
           </div>
         </div>
@@ -256,7 +210,6 @@
     </ul>
   </footer>
 </div>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script>
 			// Example starter JavaScript for disabling form submissions if there are invalid fields
 			(function () {
