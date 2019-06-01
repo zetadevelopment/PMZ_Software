@@ -2,6 +2,7 @@ const Store = require('openrecord/store/mysql');
 
 class Usuario extends Store.BaseModel {
   static definition() {
+    this.stampable();
     // validaciones
     this.validatesPresenceOf('nombre', 'email', 'password');
     this.validatesFormatOf('email', 'email');

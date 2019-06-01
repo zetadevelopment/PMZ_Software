@@ -18,6 +18,7 @@
   "homepage": "https://github.com/zetadevelopment/PMZ_Software#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "body-parser": "^1.19.0",
     "express": "^4.16.4",
     "glob": "^7.1.4",
     "mysql": "^2.17.1",

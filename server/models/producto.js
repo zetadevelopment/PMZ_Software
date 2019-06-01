@@ -2,8 +2,8 @@ const Store = require('openrecord/store/mysql');
 
 class Producto extends Store.BaseModel {
   static definition() {
-    this.validatesPresenceOf('nombre', 'codigo', 'fecha_expiracion', 'cantidad');
-    this.validatesFormatOf('fecha_expiracion', 'date');
+    this.validatesPresenceOf('nombre', 'codigo', 'cantidad');
+    // this.validatesFormatOf('fecha_expiracion', 'date');
     this.validatesNumericalityOf('cantidad', { gt: 0 });
 
     this.hasMany('alerta_productos');
