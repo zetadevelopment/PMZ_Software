@@ -5,6 +5,5 @@ module.exports = function migration00004() {
     this.string('unidad');
     this.date('fecha_expiracion', { not_null: true });
     this.integer('cantidad', { not_null: true, unsigned: true });
-    this.timestamp();
   });
 }
