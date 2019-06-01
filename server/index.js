@@ -92,13 +92,14 @@ store.ready(async () => {
   app.post('/producto', async (req, res) => {
     let product;
 
-    if (req.body && req.body.nombre && req.body.cantidad) {
+    if (req.body && req.body.nombre && req.body.cantidad && req.body.precio) {
       product = await Producto.create({
         nombre: req.body.nombre,
         codigo: 'COD',
         unidad: req.body.unidad || 'unidad',
         fecha_expiracion: new Date('2020-08-20T14:20:00'),
-        cantidad: req.body.cantidad
+        cantidad: req.body.cantidad,
+        precio: req.body.precio
       }).catch((er) => { console.log(er) });
     }
 
